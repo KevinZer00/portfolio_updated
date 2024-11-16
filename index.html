@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Yu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_light.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/a11y-dark.min.css">
+</head>
+
+<body>
+    <canvas id="interactiveDotsCanvas"></canvas>
+
+    <div class="content-wrapper">
+        <!-- Bio Section -->
+        <section>
+            <div class="bio-section">
+                <div class="content">
+                    <div class="name">
+                        <span>K</span>
+                        <span>E</span>
+                        <span>V</span>
+                        <span>I</span>
+                        <span>N</span>
+                        &nbsp;
+                        <span>Y</span>
+                        <span>U</span>
+                        &nbsp;
+                        <div id="avatar-container" style="width: 50px; height: 0px;  auto; position: relative;">
+                            <svg fill="#ffffff" height="50px" width="100px" version="1.1" id="avatar"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                viewBox="0 0 512 512" xml:space="preserve">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M481.573,264.637c-0.502-0.501-1.058-0.959-1.656-1.351c-0.588-0.392-1.22-0.73-1.885-1.002
+                                        c-0.654-0.272-1.339-0.479-2.036-0.621c-1.405-0.283-2.843-0.283-4.248,0c-0.697,0.142-1.383,0.349-2.048,0.621
+                                        c-0.655,0.272-1.285,0.61-1.874,1.002c-0.6,0.392-1.156,0.85-1.657,1.351s-0.959,1.057-1.351,1.656
+                                        c-0.403,0.588-0.73,1.22-1.002,1.885c-0.272,0.654-0.49,1.34-0.62,2.037c-0.143,0.697-0.218,1.416-0.218,2.124
+                                        s0.075,1.427,0.218,2.124c0.13,0.697,0.348,1.383,0.62,2.037c0.272,0.664,0.599,1.296,1.002,1.885
+                                        c0.392,0.599,0.85,1.155,1.351,1.656c0.501,0.501,1.057,0.959,1.657,1.351c0.588,0.392,1.219,0.73,1.874,1.002
+                                        c0.664,0.272,1.351,0.479,2.048,0.621c0.697,0.142,1.416,0.218,2.124,0.218c0.707,0,1.427-0.076,2.124-0.218
+                                        c0.697-0.142,1.383-0.349,2.036-0.621c0.664-0.272,1.296-0.61,1.885-1.002c0.599-0.392,1.155-0.85,1.656-1.351
+                                        c2.026-2.026,3.193-4.837,3.193-7.702C484.766,269.474,483.6,266.664,481.573,264.637z" />
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path d="M473.871,250.552c6.015,0,10.894-4.877,10.894-10.894v-10.894c0-61.032-23.747-118.432-66.867-161.625
+                                        C374.783,23.954,317.435,0.11,256.418,0c-0.139,0-0.27,0-0.411,0C195.782,0,138.777,23.797,95.47,67.028
+                                        c-44.002,43.923-68.235,102.025-68.235,163.604v171.751c0,23.752,19.002,43.597,42.357,44.237
+                                        c11.877,0.332,23.098-4.051,31.602-12.324c4.807-4.678,8.395-10.256,10.604-16.364c1.703,5.561,2.585,11.385,2.585,17.328v32.485
+                                        c0,23.752,19.002,43.597,42.357,44.237c11.904,0.344,23.098-4.051,31.602-12.324c8.506-8.276,13.189-19.368,13.189-31.233v-17.426
+                                        c17.757,4.339,36.017,6.533,54.468,6.533s36.711-2.194,54.468-6.533v16.747c0,23.752,19.002,43.597,42.357,44.237
+                                        c0.413,0.012,0.825,0.017,1.235,0.017c11.417,0,22.159-4.355,30.367-12.341c8.506-8.276,13.189-19.368,13.189-31.233V435.26
+                                        c0-6.069,0.919-12.012,2.694-17.68c6.035,16.48,21.538,28.544,39.663,29.041c11.89,0.332,23.099-4.051,31.602-12.324
+                                        c8.506-8.276,13.189-19.368,13.189-31.233v-98.042c0-6.017-4.878-10.894-10.894-10.894c-6.015,0-10.894,4.877-10.894,10.894
+                                        v98.042c0,5.933-2.342,11.479-6.596,15.617c-4.25,4.136-9.858,6.314-15.811,6.161c-11.672-0.32-21.168-10.395-21.168-22.458
+                                        v-18.047v-57.53c0-6.017-4.878-10.894-10.894-10.894s-10.894,4.877-10.894,10.894v53.12
+                                        c-13.892,15.127-21.787,35.05-21.787,55.332v33.164c0,5.933-2.342,11.479-6.596,15.617c-4.251,4.136-9.84,6.316-15.811,6.161
+                                        c-11.672-0.32-21.168-10.395-21.168-22.458v-31.089c0-3.469-1.651-6.729-4.448-8.781c-2.794-2.052-6.401-2.651-9.711-1.611
+                                        c-20.026,6.291-40.918,9.481-62.094,9.481s-42.069-3.19-62.097-9.481c-3.313-1.039-6.916-0.44-9.711,1.611
+                                        c-2.796,2.052-4.448,5.313-4.448,8.781v31.769c0,5.933-2.342,11.479-6.596,15.617c-4.25,4.136-9.864,6.316-15.811,6.161
+                                        c-11.672-0.32-21.168-10.395-21.168-22.458v-32.485c0-20.293-7.902-40.224-21.787-55.335v-53.117
+                                        c0-6.017-4.878-10.894-10.894-10.894c-6.015,0-10.894,4.877-10.894,10.894v57.528v18.727c0,5.933-2.342,11.479-6.596,15.617
+                                        c-4.251,4.136-9.846,6.314-15.811,6.161c-11.672-0.32-21.168-10.395-21.168-22.458V230.631c0-55.751,21.961-108.378,61.84-148.184
+                                        c39.199-39.125,90.731-60.66,145.15-60.66c0.122,0,0.247,0,0.37,0c113.918,0.204,206.598,93.053,206.598,206.978v10.894
+                                        C462.977,245.675,467.856,250.552,473.871,250.552z" />
+                                    </g>
+                                </g>
+
+                                <!-- Left Eye -->
+                                <g id="left-eye">
+                                    <circle cx="168" cy="218" r="42" fill="#ffffff" />
+                                    <circle id="left-pupil" cx="168" cy="218" r="20" fill="#333" />
+                                </g>
+
+                                <!-- Right Eye -->
+                                <g id="right-eye">
+                                    <circle cx="343" cy="218" r="42" fill="#ffffff" />
+                                    <circle id="right-pupil" cx="343" cy="218" r="20" fill="#333" />
+                                </g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M285.957,272.339h-59.915c-13.515,0-24.51,10.995-24.51,24.511v6.264c0,19.071,15.516,34.587,34.587,34.587h39.762
+                                        c19.071,0,34.587-15.516,34.587-34.587v-6.264C310.467,283.334,299.471,272.339,285.957,272.339z" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+
+                    </div>
+
+                    <p class="bio">Front-End Developer passionate about crafting engaging digital experiences.</p>
+                    <div class="social-links">
+                        <div class="social-links">
+                            <a href="https://discord.com" target="_blank" class="social-icon">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="social-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section>
+            <div class="about-section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>ABOUT ME</h2>
+                        <p>Hi! I'm Kevin, a front-end developer with a passion for creating interactive and engaging
+                            user
+                            experiences. I love working with modern web technologies and am always eager to learn more.
+                            In
+                            my
+                            free time, I enjoy bodybuilding, dabbling in game development, and building fun web
+                            projects.
+                        </p>
+                        <br>
+                        <h3>What I Listen To</h3>
+                        <div class="playlists">
+                            <iframe style="border-radius:12px"
+                                src="https://open.spotify.com/embed/playlist/61NABFyr5XglXw9TkSp9yo?utm_source=generator&theme=0"
+                                width="100%" height="352" frameBorder="" allowfullscreen=""
+                                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--Technologies Section -->
+        <section>
+            <h2>TECHNOLOGIES I USE</h2>
+            <div class="tech-icons">
+                <li class="tech-icon" data-tooltip="Netlify"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M6.49 19.04h-.23L5.13 17.9v-.23l1.73-1.71h1.2l.15.15v1.2L6.5 19.04ZM5.13 6.31V6.1l1.13-1.13h.23L8.2 6.68v1.2l-.15.15h-1.2zm9.96 9.09h-1.65l-.14-.13v-3.83c0-.68-.27-1.2-1.1-1.23c-.42 0-.9 0-1.43.02l-.07.08v4.96l-.14.14H8.9l-.13-.14V8.73l.13-.14h3.7a2.6 2.6 0 0 1 2.61 2.6v4.08l-.13.14Zm-8.37-2.44H.14L0 12.82v-1.64l.14-.14h6.58l.14.14v1.64zm17.14 0h-6.58l-.14-.14v-1.64l.14-.14h6.58l.14.14v1.64zM11.05 6.55V1.64l.14-.14h1.65l.14.14v4.9l-.14.14h-1.65zm0 15.81v-4.9l.14-.14h1.65l.14.13v4.91l-.14.14h-1.65z" />
+                    </svg>
+                </li>
+                <li class="tech-icon" data-tooltip="Heroku"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M20.61 0H3.39a2.15 2.15 0 0 0-2.16 2.16v19.681A2.15 2.15 0 0 0 3.39 24h17.22a2.15 2.15 0 0 0 2.159-2.159V2.16A2.15 2.15 0 0 0 20.61 0m.96 21.841c0 .539-.421.96-.96.96H3.39a.95.95 0 0 1-.96-.96V2.16c0-.54.42-.961.96-.961h17.22a.95.95 0 0 1 .96.961zM6.63 20.399L9.33 18l-2.7-2.4zm9.72-9.719c-.479-.48-1.379-1.08-2.879-1.08c-1.621 0-3.301.421-4.5.84V3.6h-2.4v10.38l1.68-.78s2.76-1.26 5.16-1.26c1.2 0 1.5.66 1.5 1.26v7.2h2.4v-7.2c.059-.179.059-1.501-.961-2.52M13.17 7.5h2.4c1.08-1.26 1.62-2.521 1.8-3.9h-2.399c-.241 1.379-.841 2.64-1.801 3.9" />
+                    </svg>
+                </li>
+                <li class="tech-icon" data-tooltip="Three.JS"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0.85">
+                            <path d="M8 22L3 3l19 5.5z" />
+                            <path d="m12.573 17.58l-6.152-1.576l8.796-9.466l1.914 6.64" />
+                            <path d="M12.573 17.58L11 11l6.13 2.179M9.527 4.893L11 11L4.69 9.436z" />
+                        </g>
+                    </svg>
+                </li>
+                <li class="tech-icon" data-tooltip="HTML"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="m3 2l1.578 17.824L12 22l7.467-2.175L21 2zm14.049 6.048H9.075l.172 2.016h7.697l-.626 6.565l-4.246 1.381l-4.281-1.455l-.288-2.932h2.024l.16 1.411l2.4.815l2.346-.763l.297-3.005H7.416l-.562-6.05h10.412z" />
+                    </svg>
+                </li>
+                <li class="tech-icon" data-tooltip="CSS"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="m3 2l1.578 17.834L12 22l7.468-2.165L21 2zm13.3 14.722l-4.293 1.204H12l-4.297-1.204l-.297-3.167h2.108l.15 1.526l2.335.639l2.34-.64l.245-3.05h-7.27l-.187-2.006h7.64l.174-2.006H6.924l-.176-2.006h10.506z" />
+                    </svg>
+                </li>
+                <li class="tech-icon" data-tooltip="JavaScript"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M6 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zm7.334 13.055q1.08.87 2.156.858q.66 0 1.012-.242a.75.75 0 0 0 .341-.66a.97.97 0 0 0-.34-.748q-.352-.307-1.332-.616q-1.177-.34-1.815-.88q-.626-.54-.638-1.507q0-.913.792-1.529q.77-.616 1.97-.616q1.672 0 2.683.814l-.77 1.199a2.6 2.6 0 0 0-.935-.462a3.2 3.2 0 0 0-.946-.165q-.57 0-.913.209q-.34.21-.34.55q0 .374.417.638q.42.254 1.43.561q1.221.363 1.738.968t.517 1.54q0 .957-.737 1.65q-.726.682-2.112.715q-1.815 0-3.036-1.089zm-5.53.638q.352.22.847.22q.517 0 .858-.297q.34-.308.341-1.067v-5.302h1.485v5.588q-.033 1.298-.748 1.87a2.5 2.5 0 0 1-.891.484a3.3 3.3 0 0 1-.935.143q-.825 0-1.463-.286q-.682-.307-1.144-1.089l1.034-.847q.285.385.616.583" />
+                    </svg>
+                </li>
+                <li class="tech-icon" data-tooltip="Node.JS"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em" viewBox="0 0 16 16">
+                        <path fill="currentColor"
+                            d="M7.586.102a.75.75 0 0 1 .756 0l6.214 3.625a.75.75 0 0 1 .373.648v7.25a.75.75 0 0 1-.373.648l-6.214 3.625a.75.75 0 0 1-.756 0l-1.553-.906a.75.75 0 0 1 .756-1.296l1.175.686l5.465-3.188V4.806L7.964 1.618L2.5 4.806v6.388l1.117.652c.344.11.77.137 1.069.005a.75.75 0 0 0 .364-.34c.104-.188.2-.501.2-1.011V5.25a.75.75 0 0 1 1.5 0v5.25q0 1.037-.39 1.74a2.25 2.25 0 0 1-1.068.983c-.806.356-1.697.21-2.242.014a1 1 0 0 1-.124-.058l-1.554-.906A.75.75 0 0 1 1 11.625v-7.25a.75.75 0 0 1 .372-.648zm.66 5.181c.397-.472 1.017-.783 1.858-.783c.78 0 1.375.268 1.778.693a.75.75 0 1 1-1.09 1.03C10.703 6.132 10.52 6 10.103 6c-.442 0-.624.148-.709.248a.64.64 0 0 0-.145.377c0 .083.036.247.145.377c.085.1.267.248.71.248a.8.8 0 0 1 .212.03c.62.09 1.092.368 1.416.753c.372.443.496.967.496 1.342s-.124.899-.496 1.342c-.397.472-1.017.783-1.858.783c-.78 0-1.375-.268-1.777-.693a.75.75 0 0 1 1.09-1.03c.087.092.271.223.687.223c.442 0 .625-.148.71-.248a.64.64 0 0 0 .144-.377a.64.64 0 0 0-.145-.377c-.084-.1-.267-.248-.709-.248a.8.8 0 0 1-.213-.03c-.62-.09-1.092-.368-1.415-.753a2.14 2.14 0 0 1-.497-1.342c0-.375.124-.899.497-1.342" />
+                    </svg>
+                </li>
+                <li class="tech-icon" data-tooltip="GSAP"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M17.21 0c-.545.003-1.084.134-1.256.367c-.11.165-.192 1.196-.11 1.718c0 0 .032.345.09.614l-.02.182a7 7 0 0 1-.097.605c-.01.056-.207.095-.425.152l-.138-.042c-.234-.069-.385.123-.618.26c-.069-.04-.371-.178-.536-.082s-.275.193-.44.261c-.082-.041-.302-.041-.48.028a1.3 1.3 0 0 0-.483.278c-2.314.58-4.813 1.635-5.012 1.741c-1.017.522-2.679 1.415-3.434 2.033c-1.291 1.071-2.06 2.322-2.363 3.242c-.385 1.14-.275 1.827.096 1.387c.298-.366 1.632-1.454 2.475-1.999l-.002.007a3 3 0 0 1 .44-.26l.233-.124l.505-.323c.602.552.803 1.433.937 2.63c.22 1.841 1.704 2.693 3.434 2.72c1.8.028 2.446.399 3.119 1.305c.153.201.318.307.47.368a2 2 0 0 0-.16.405c-.075.17-.125.38-.157.608a.16.16 0 0 0-.03.075c-.068.536-.055 1.8-.068 2.473s-.028.77-.083.866c-.055.11-.11.178-.178.467c-.069.302-.193.384-.316.631c-.206.385-.165.81.041 1.003s.77.481 1.538.385c.77-.096.88-.151.756-.893c-.014-.11-.192-.605-.137-.797c.082-.206-.096-.563-.055-.577s.096-.288.096-.426c0-.137-.014-.796.137-1.14c.062-.14.193-.46.326-.785c.442-.723.459-1.161.48-1.41c.03-.202.046-.46.018-.744c.055-.083.289-.275.316-.646c0 0 .644-.337 1.102-1.148c.16.557.31.91.286 1.272c-.499.39-.684.678-.76.959c-.048-.02-.076-.037-.11-.04h-.027a.4.4 0 0 0-.106.029c-.192.068-.041 1.318.165 1.827s.316.81.398 1.36c.083.549-.192 1.222-.302 1.524c0 0-.179.536.233.824c.358.248 1.704.18 2.308.18c.605 0 1.511.219 2.088.109c.715-.124.824-.55.399-.77c-.426-.22-1.072-.329-1.91-.933c-.22-.152-.522-.289-.563-.412c-.041-.124-.041-.838-.027-1.457c.013-.618.22-1.414.288-1.84c.064-.398-.076-.388-.262-.351c.032-.147.066-.292.097-.446c.344-.632.193-1.223.193-1.223c.82-1.044.4-3.27.22-4.048c.64.303.96.188.96.188c.102-.055.192-.134.274-.224c.337-.362.51-.916.51-.916V11c.782-.783 1.151-1.936.26-2.692a1.33 1.33 0 0 0-.219-1.263a1.56 1.56 0 0 0-.37-1.731a1.4 1.4 0 0 0-.487-.297c-.2-.295-.245-.417-.572-.349c-.15-.165-.178-.288-.494-.178c0 0-.096-.234-.275-.289a.3.3 0 0 0-.05-.015c-.302-.21-.576-.215-.772-.16c-.064-.048-.061-.124-.07-.388c-.008-.2-.019-.486-.031-.744c.027-.328.102-.974.126-1.303c.028-.37.042-.948-.123-1.195C18.303.12 17.754-.003 17.21 0m-.005.34c.7 0 1.002.22 1.044.343c.013.028.082.495.04.797c-.013.11-.027.509-.054.687c-.014.179-.069.385-.124.673c-.041.234-.233.495-.384.536c-.261.069-.742.055-1.017 0c-.069-.014-.124-.055-.192-.096c-.151-.248-.234-.44-.261-.742c-.028-.289-.083-.412-.096-.632c-.014-.33-.014-.55-.014-.55c.014-.178.069-.618.069-.659c.013-.123.233-.357.989-.357m-1.133 2.702c.146.149.301.306.432.416c.124.11.426.096.7.096c.248 0 .468.028.564-.027c.154-.077.355-.235.523-.394c.011.152.022.304.026.435c.01.295-.043.468.024.57c-.082.048-.174.105-.269.156c-.151.08-.306.136-.403.115h-.002c-.209-.035-.931-.215-1.331-.407c-.167-.259-.335-.398-.326-.448c.027-.137.04-.247.054-.425zm-.853.69l.035.001c.424.036.65.152.808.284l.076.03l.008-.027q.071.045.162.088c.47.159 1.104.308 1.309.353c.247.055.645-.192.838-.316c.343-.22.783-.04.989.193c.137.15.192.247.192.288c.316-.11.357.041.508.206c.385-.179.412.041.44.137c-.122 0-.298.014-.538.04l-.012-.012c-.144-.153-.402-.289-.599-.384c-.087-.031-.18-.049-.252-.097c-.11-.055-.22-.137-.385-.123c-.687.082-.824.315-1.415.178c-.577-.134-.737-.254-1.333-.221l.001.026c-.105.016-.2.03-.22.03c-.206.012-.722.067-1.153-.1a1 1 0 0 0-.161-.076l-.005-.002h-.001q-.27-.107-.63-.112h-.026c.218-.11.356-.259.56-.218c.22.041.44.22.564.357a.9.9 0 0 0-.178-.288c.128-.09.245-.229.418-.234zm-1.1.545c.15.002.28.026.417.073c.018.009.034.018.059.029c.288.137.81.164 1.25.137a2.3 2.3 0 0 0 .563-.095c.322.024.514.11.977.216c.31.07.502.045.695-.007c.193-.053.386-.13.723-.17a.5.5 0 0 1 .188.013q.057.03.11.061c.062.049.214.135.343.189c.164.068.59.357.645.425a.1.1 0 0 0 .038.03c.242.314.407.755.396 1.21c-.06.46-.426.214-.626.12c-.412-.178-.824-.302-1.305-.302c-.48 0-1.099.041-1.635.179c-.741.206-.961.192-1.29.027c-.33-.178-.907-.618-.907-.618v.01q-.01-.012-.014-.01c-.042.069-.138.247-.193.33c-.027.522-.343 1.346-.934 1.552a.55.55 0 0 1-.467-.041a2.5 2.5 0 0 0-.55-.275c.481.384.729.673.949 1.181c.174.43.415 1.017 1.002 1.646c.363-.004.725.097.962.346c.137.137.357.289.33.426c0 .041-.083.151-.151.234a3 3 0 0 1-.207.22c-.054.04-.247.192-.288.22s-.096.095-.137.109c-.138.069-.289.014-.426-.055s.027-.082-.124-.192c-.34-.24-.541-.411-.454-.832c-.932-.794-2.561-1.26-2.911-2.108c-.22-.55-.248-.824-.042-1.058c.605-.687.371-1.346.825-1.634c.425-.275.783.04.989.33c-.124-.509-.55-.633-.55-.674c0-.632.605-1.071 1.21-1.181c.218-.041.389-.062.54-.06zm-1.847.534c-.14.196-.231.435-.246.721c-.206.028-.673.055-.907.907a3.4 3.4 0 0 1-.214.62c-.103.045-2.946 1.274-5.229 2.542l-.01-.007q-.48.27-.919.546l-.125.077l-.001.003c-1.136.723-2.04 1.45-2.637 2.112c.412-2.679 2.528-4.08 3.53-4.698c2.42-1.489 4.629-2.225 6.758-2.823m8.037.323c.26-.004.536.06.756.275c.59.577.425 1.209.247 1.648c.15.179.508.687.288 1.291c-.04.138-.343.138-.563.495c.55-.316.893-.233 1.017.165c.192.618-.234 1.36-.605 1.772c0-.014-.014-.028-.014-.041c-.055.206-.123.604-.535 1.044c-.206.22-.371.192-.605.137c-.215-.054-.322-.142-.543-.276c-.036-.207-.102-.482-.102-.59c0-.044-.004-.141-.01-.243q.047-.054.106-.114s.178-.247.44-.233c.26.014.535-.041.604-.11c0-.48-.55-.494-.357-1.319c.013-.04.082-.11.302-.137c-.33-.069-.48-.083-.714-.302l-.013-.013c.11-.253.224-.457.301-.605c.193-.385.082-.852.082-.852c.207-.069.385-.179.413-.247c.203-.673-.164-1.322-.605-1.74q.054-.005.11-.006zm-5.46.925q.014.024.034.05c.179.22.577.495 1.113.673c.26.083.467.028.7-.027c1.123-.278 2.304-.346 3.33.155a1.8 1.8 0 0 1-.157 1.068c-.232.465-.533 1.068-.48 2.215c-.246.044-1.419.144-1.992.037c-.521-.097-1.416-.525-1.62-.69a7 7 0 0 1-.125-.848a1.4 1.4 0 0 0 .454-.343c-.412.068-.577.04-.825-.097c-.235-.13-.642-.533-.87-.82c.229-.29.393-.69.335-1.226q.055-.075.102-.147zm-4.38 1.598c-.09.253.093.654.224.953c.508 1.179 2.07 1.29 3.127 2.18a.7.7 0 0 0 .06.388c.083.165.371.413.371.413c-.055.054-.027.164-.027.164c.204.217.504.243.547.246c-.435 1.248-.816 2.626-.451 4.095c-.179.244-.368.445-.531.668a.85.85 0 0 1-.444-.31c-.591-.852-1.457-1.416-3.023-1.374c-2.349.055-3.283-.907-3.461-2.748c-.094-.974-.357-1.922-.888-2.479C7.489 9.014 9.6 7.937 10.268 7.73a3 3 0 0 0 .2-.073zm3.496.18c.381.442.795.727 1.193.979c.082.343.11.577.192 1.03h-.041l-.027.308a3 3 0 0 0-.62-.113l.001-.003c-.893-1.057-.7-1.47-1.058-2.019c.097-.034.225-.094.36-.182m5.911 1.086c.076.067.178.12.323.154c-.327.68.33.912.37 1.17c-.143.083-.367.037-.603.025c-.115-.006-.229.065-.321.147l.032-.367c.006-.43.09-.809.2-1.13zM15.79 9.947c.024.035.178.131 1.002.352c1.026.275 2.323.12 2.55.09a.4.4 0 0 1-.022.089c0 .343.055.59.096.81c.053.308.13.533.163.74l.008-.007c.234 1.367.561 3.133-.267 4.048c.041.192.069.467.014.783a3 3 0 0 1-.151.535a2.3 2.3 0 0 0-.108.352c-1.1.142-1.755.055-2.06-.015c.123-.374.407-.754.876-.735c-.022-.911-.264-1.223-.511-1.891c.395-.883.299-1.665.621-2.848c-.247.261-.44 1.209-.604 1.786c-.206.838-.563 1.648-1.525 2.294c0 .22-.069.384-.151.494c-.179.261-.412.344-.494.77c.11-.138.26-.261.26-.22a9 9 0 0 1-.025.493l.012.001c-.165 1.044-.522 1.525-.742 2.115c-.151.426-.096 1.36-.151 1.374c-.385.083-.975-.068-1.14-.15c.162-1.14.019-2.278.436-3.6l-.015-.006c.16-.554.478-.878.939-1.464c-.161-.52-.532-1.64.266-4.182q.049-.02.105-.049l.206-.137c.04-.028.096-.069.137-.096c.069-.042.371-.371.412-.412c.096-.097.165-.124.192-.234c.055-.206-.247-.412-.37-.55q-.025-.027-.043-.05q.02-.059.042-.114c.01-.125.028-.26.042-.367zm.883 7.942c.05.002.174.122.751.158c.66.04 1.539-.083 1.772-.138s.097.11.069.275l-.026.169c-.399.134-1.008.188-1.416.202c-.393.013-.846-.012-1.161-.11c-.048-.26-.063-.47-.007-.55a.02.02 0 0 1 .018-.006m2.506.846c-.02.135-.035.223-.058.372c-.388.12-.888.122-1.27.135a4.4 4.4 0 0 1-1.012-.07l-.033-.109l-.065-.252c.179.034.53.079 1.15.087a4.1 4.1 0 0 0 1.288-.163m-.106.685c-.069.44-.055 1.786-.014 2.157c.014.11.948.522 1.277.77c.107.085.259.157.422.222c.042.042.116.105.197.203c.162.213.052.436-.135.526c-.264-.007-.568-.052-1.074-.128c-.695-.104-1.129-.101-1.73-.106v-.003c-.152-.275-.056-.728-.056-.728a2.2 2.2 0 0 1-.809-.18l.012-.026c.234-.48.22-.591.151-1.415c-.047-.578-.196-.883-.335-1.195c.169.016.409.035.857.041a4.6 4.6 0 0 0 1.237-.138m-5.306 2.084c.243 0 .6.032.676.1v.014c.014.165.165.399.11.522c-.027.069-.096-.041-.192-.068c.041.26.151.741.316 1.112c.11.248.041.426-.33.495c-.33.014-.755 0-1.112-.083c-.412-.206-.55-.316-.467-.7c.068-.275.494-.59.865-.838c-.206.014-.426.165-.398-.014c.055-.357.206-.33.302-.508c-.02-.02.084-.032.23-.032" />
+                    </svg>
+                </li>
+                <li class="tech-icon" data-tooltip="Git"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                        height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M2.6 10.59L8.38 4.8l1.69 1.7c-.24.85.15 1.78.93 2.23v5.54c-.6.34-1 .99-1 1.73a2 2 0 0 0 2 2a2 2 0 0 0 2-2c0-.74-.4-1.39-1-1.73V9.41l2.07 2.09c-.07.15-.07.32-.07.5a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2c-.18 0-.35 0-.5.07L13.93 7.5a1.98 1.98 0 0 0-1.15-2.34c-.43-.16-.88-.2-1.28-.09L9.8 3.38l.79-.78c.78-.79 2.04-.79 2.82 0l7.99 7.99c.79.78.79 2.04 0 2.82l-7.99 7.99c-.78.79-2.04.79-2.82 0L2.6 13.41c-.79-.78-.79-2.04 0-2.82" />
+                    </svg>
+                </li>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <div class="projects-section">
+                <h2>PROFESSIONAL PROJECTS</h2>
+                <div class="projects-container">
+                    <div class="connector-line"></div>
+                    <div class="projects">
+                        <div class="project-card">
+                            <div class="project-title">Push Past Limits Coaching</div>
+                            <p class="project-description">
+                                A mock up site for a client that utilizes basic HTML and CSS for the styling, relying
+                                heavily on
+                                grids. The project integrates Sheety, turning a Google spreadsheet
+                                into an API. This allows the user(s) to simply input data into the connected
+                                spreadsheet,
+                                and it
+                                will dynamically add the entries
+                                into the site itself.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">Netlify</span>
+                            </div>
+                            <a href="https://pushpastlimits.com/home" target="_blank" class="project-link">Live Demo</a>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-title">Designo</div>
+                            <p class="project-description">
+                                A website for a fictional creative agency company called Designo. This project is one of
+                                frontendmentor.io's challenges. A figma file was provided with desktop, tablet, and
+                                mobile
+                                views. The entirety of the site, from the font sizes to the positioning of images, was
+                                built
+                                as
+                                close to as possible to the original design.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">Netlify</span>
+                            </div>
+                            <a href="https://clever-longma-c22a24.netlify.app" target="_blank" class="project-link">Live
+                                Demo</a>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-title">HTML Converter</div>
+                            <p class="project-description">
+                                Originally an interview question, this project was built to showcase the conversion of
+                                HTML
+                                to
+                                either JSON, XML, Markdown, or CSV. The site allows users to either paste or upload HTML
+                                code.
+                                Once converted, there will be an option to download the converted language(s).
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">Netlify</span>
+                            </div>
+                            <a href="https://htmltojson.netlify.app" target="_blank" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>FUN PROJECTS</h2>
+                <div class="projects-container">
+                    <div class="connector-line"></div>
+                    <div class="projects">
+                        <div class="project-card">
+                            <div class="project-title">Dungeon Crawler Game</div>
+                            <p class="project-description">
+                                A 2D web-based dungeon crawler game built with the Phaser framework featuring a variety
+                                of
+                                monsters with differing healths and movement speeds. The game incorporates key game
+                                components
+                                such as collisions, enemy-player detection, combat system, health system, and menu UI.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-badge">Phaser.JS</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">Tiled (Tilemap Editor)</span>
+                                <span class="tech-badge">Netlify</span>
+                            </div>
+                            <a href="https://kevinyu.netlify.app" target="_blank" class="project-link">Live Demo</a>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-title">Widget-Based Portfolio</div>
+                            <p class="project-description">
+                                A prototype for a unique, modularized portfolio template that features a weather API
+                                widget
+                                with
+                                integrated geolocation, a web audio API music
+                                player with equalizer, a terminal that accepts user commands, current time/date,
+                                hardware
+                                statistics retrieval
+                                and dynamic network utilization graph (through the use of os-utils library).
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-badge">Node.JS</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">Heroku</span>
+                            </div>
+                            <a href="https://kevinyuportfolio-a4324dadb5b3.herokuapp.com" target="_blank"
+                                class="project-link">Live Demo</a>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-title">3D Celestial Bodies Gallery (Desktop only)</div>
+                            <p class="project-description">
+                                The project utilizes the Three.JS framework to introduce 3D models. The planet models
+                                are
+                                simple
+                                three-dimensional spheres with texture skins wrapped around. There are GSAP scrolling
+                                triggers
+                                that will scroll through each celestial body, from smallest to largest.
+                            </p>
+                            <div class="project-technologies">
+                                <span class="tech-badge">Three.JS</span>
+                                <span class="tech-badge">GSAP</span>
+                                <span class="tech-badge">CSS</span>
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">Netlify</span>
+                            </div>
+                            <a href="https://superlative-squirrel-964e20.netlify.app" target="_blank"
+                                class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tutorial Section -->
+        <section>
+            <div class="tutorial-section">
+                <h2>Create Dot Hover Effect</h2>
+                <p>Want to learn how to reproduce the background dot hover effect?</p>
+                <button class="tutorial" onclick="window.open('index2.html', '_blank')">YEAH!</button>
+            </div>
+        </section>
+
+        <!-- Other Works Section -->
+        <section>
+            <div class="other-section">
+                <h2>Other Collaborative Projects</h2>
+                <h3>GameDev.tv's Game Jam Contest</h3>
+                <i>May 24th 2024 - June 3rd 2024</i><br>
+                <a href="https://sterfrynoodle.itch.io/breaking-dusk">Breaking Dusk</a>
+                <br><br>
+                <h3>SCREAM ZONE's Game Jam Contest</h3>
+                <i>October 16th 2024 - October 23rd 2024</i><br>
+                <a href="https://sterfrynoodle.itch.io/the-experimental-haunting">The Experimental Haunting</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <div class="contact-section">
+                <h2>Want To Chat?</h2>
+                <div class="contact-content">
+                    <p>Feel free to email me at <a href="mailto:kevinyuzer0@gmail.com">kevinyuzer0@gmail.com</a> and
+                        let's
+                        get chatting!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

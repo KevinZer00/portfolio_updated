@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Yu</title>
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="styles_light.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/a11y-dark.min.css">
+</head>
+<body>
+    <canvas id="interactiveDotsCanvas"></canvas>
+    <div class="content-wrapper">
+        <section>
+            <div class="title">BACKGROUND DOTS HOVER EFFECT</div>
+        </section>
+            <p>Let's get started! First thing's first, we're going to create a container for the canvas
+                <pre><code class="html" id="code-box">
+&lt;canvas id="interactiveDotsCanvas"&gt;&lt;/canvas&gt;
+                </code></pre>
+            </p>
+            <p>Now, we go into the JavaScript portion. A canvas must first be created
+                <pre><code class="javascript" id="code-box">
+const canvas = document.getElementById("interactiveDotsCanvas");
+const ctx = canvas.getContext("2d");
+                </code></pre>
+            </p>
+
+            <p>Next, we'll create a function to ensure the canvas covers the entire page regardless of screen width. The function
+                sets the canvas' width to the current window's width, and the height to the total height of the document, including
+                content outside the viewport. Math.max() ensures the canvas height sufficiently covers everything
+            <pre><code class="javascript" id="code-box">
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = Math.max(window.innerHeight, document.documentElement.scrollHeight);
+}
+
+resizeCanvas();
+    </code></pre>
+</p>
+            <p>
+                Let's declare some paremeters for the dots. These will be an empty array, the size of each dot, and the spacing between the dots
+                <pre><code class="javascript" id="code-box">
+const dots = [];
+const dotSize = 1.5;
+const spacing = 30;
+                </code></pre>
+            </p>
+
+            <p>Next up, we've got to create a loop to generate all the dots! A nested for loop is required, one for height and the other for width.
+                Inside the loop, we'll be pushing the x and y positions, radius of each dot, and the color to the array initialized earlier. 
+                <pre><code class="javascript" id="code-box">
+for (let y = 0; y < canvas.height; y += spacing) {
+    for (let x = 0; x < canvas.width; x += spacing) {
+        dots.push({ x, y, radius: dotSize, color: "#333333" });
+        }
+}
+    </code></pre>
+            </p>
+
+            <p>A function to draw out the dots must now be created. We'll first clear the canvas and then iterate over each dot in the array with a loop.
+                For each dot, it begins a new drawing path with ctx.beginPath() and uses ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2) to draw a full circle (from 0 to 2PI radians) 
+                at the x and y coordinates. The function will then set the color of the dots.
+                <pre><code class="javascript" id="code-box">
+function drawDots() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dots.forEach(dot => {
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+        ctx.fillStyle = dot.color;
+        ctx.fill();
+    });
+}
+                </code></pre>
+            </p>
+
+            <p>Now, we need a way to track the mouse position. Two variables will be created to keep track of the x and y position of the mouse.
+                An event listener is attached to the window object and listens for the "mousemove" event. Whenever the mouse is moved, the event listener
+            triggers a callback function. The function updates mouseX to e.clientX and mouseY to e.clientY (current horizontal and vertical coordinates).
+            <pre><code class="javascript" id="code-box">
+let mouseX = 0;
+let mouseY = 0;
+window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+    </code></pre>
+        </p>
+
+        <p>This is the fun part! We're going to need a function that updates the color of each dot based on its distance to the cursor. This function loops
+            through the array and calculates the distance between each dot and the cursor's position using Euclidean distance formula. If the dot is less than 60 pixels away, it
+            sets the dot's color to the glow color. Otherwise, the color will remain unchanged
+            <pre><code class="javascript" id="code-box">
+function updateDots() {
+    dots.forEach(dot => {
+        const distance = Math.sqrt(
+            (mouseX - dot.x) ** 2 + (mouseY - dot.y) ** 2
+        );
+            
+        // set glow radius effect
+        if (distance < 60) {
+            dot.color = "#03dac6"; // glow color
+        } else {
+            dot.color = "#333333"; // default color
+        }
+    });
+}
+            </code></pre>
+        </p>
+
+        <p>One last thing! Set up a function to call updateDots() to update the state of the dots and drawDots() to render the dots onto the canvas.
+            <pre><code class="javascript" id="code-box">
+function animate() {
+    updateDots();
+    drawDots();
+    requestAnimationFrame(animate); // schedule animate function to run again on next redraw
+    }
+            
+animate();
+            </code></pre>
+        </p>
+            All done! Now enjoy messing around with a bunch of pixels!
+        </p>
+
+
+
+
+
+
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+          hljs.highlightAll();
+        });
+      </script>
+</body>
+</html>
