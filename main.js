@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // create a list of dots
     const dots = [];
-    const dotSize = 1.5;
+    const dotSize = 1.25;
     const spacing = 30;
 
     // generate dots across the entire canvas area
@@ -99,9 +99,16 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             // set glow radius effect
-            if (distance < 60) {
-                dot.color = "#03dac6"; // glow color
-            } else {
+            if ((distance < 120) && (distance > 80)) {
+                dot.color = "#03dac52a"; 
+            } else if ((distance < 80) && (distance > 60)) {
+                dot.color = "#03dac55b";
+            } else if ((distance < 60) && (distance > 40)) {
+                dot.color = "#03dac5ab"
+            } else if (distance < 40) {
+                dot.color = "#04ffe6"
+            }
+            else {
                 dot.color = "#333333"; // default color
             }
         });
